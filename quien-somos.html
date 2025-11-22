@@ -7,6 +7,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos adicionales para las imágenes del equipo */
+        .imagenes-equipo {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .imagen-equipo-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-neon);
+            transition: all 0.3s ease;
+        }
+
+        .imagen-equipo-container:hover {
+            transform: scale(1.05);
+        }
+
+        .imagen-equipo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .imagen-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 1.5rem 1rem 1rem;
+            font-family: var(--font-primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 768px) {
+            .imagenes-equipo {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -63,10 +113,22 @@
             <p>Somos cuatro expertos, cada uno especializado en una materia diferente, pero unidos por la pasión de transformar vidas:</p>
             
             <div class="imagenes-equipo">
-                <div class="imagen-equipo">👨‍⚕️ Salud Mental</div>
-                <div class="imagen-equipo">💪 Fitness & Nutrición</div>
-                <div class="imagen-equipo">🤖 Inteligencia Artificial</div>
-                <div class="imagen-equipo">🎨 Diseño Creativo</div>
+                <div class="imagen-equipo-container">
+                    <img src="https://i.ibb.co/997CBk5G/1.png" alt="Salud Mental">
+                    <div class="imagen-overlay">Salud Mental</div>
+                </div>
+                <div class="imagen-equipo-container">
+                    <img src="https://i.ibb.co/7mqtCFb/2.png" alt="Fitness y Nutrición">
+                    <div class="imagen-overlay">Fitness & Nutrición</div>
+                </div>
+                <div class="imagen-equipo-container">
+                    <img src="https://i.ibb.co/d0nrk32f/3.png" alt="Diseño Creativo">
+                    <div class="imagen-overlay">Diseño Creativo</div>
+                </div>
+                <div class="imagen-equipo-container">
+                    <img src="https://i.ibb.co/BVJZf4JN/4.png" alt="Inteligencia Artificial">
+                    <div class="imagen-overlay">Inteligencia Artificial</div>
+                </div>
             </div>
 
             <p>Cada palabra que publicamos pasa por las manos de los cuatro. Nos aseguramos de que sea científicamente precisa, prácticamente útil, emocionalmente conectadora y estéticamente hermosa.</p>
