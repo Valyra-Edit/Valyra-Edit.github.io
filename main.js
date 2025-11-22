@@ -183,6 +183,21 @@ function generarHotmartWidget(hotmartId) {
     `;
 }
 
+// Función para inicializar Hotmart después de abrir popup
+function initHotmartInPopup() {
+    if (window.Hotmart) return; // Ya inicializado
+    
+    const script = document.createElement('script');
+    script.src = 'https://static.hotmart.com/checkout/widget.min.js';
+    script.onload = () => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+        document.head.appendChild(link);
+    };
+    document.head.appendChild(script);
+}
+
 // ===================================
 // HEADER Y MENÚ DESPLEGABLE
 // ===================================
@@ -310,7 +325,7 @@ class Carousel {
 }
 
 // ===================================
-// POPUP
+// POPUP CON HOTMART FUNCIONAL
 // ===================================
 function openPopup(bookId) {
     const libro = libros[bookId];
@@ -331,24 +346,31 @@ function openPopup(bookId) {
                     <span class="popup-price-original">€${libro.precioOriginal.toFixed(2)}</span>
                     <span class="popup-price-discount">€${libro.precioDescuento.toFixed(2)}</span>
                 </div>
-                <div style="margin-top: 1rem;">
-                    ${generarHotmartWidget(libro.hotmartId)}
-                </div>
+                <div class="hotmart-container" id="hotmartContainer-${bookId}"></div>
             </div>
             <div>
                 <h3 style="color: var(--primary-neon); margin-bottom: 1rem; font-family: var(--font-primary);">Descripción</h3>
                 <div class="popup-description">${libro.descripcionLarga}</div>
                 <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(179,55,242,0.1); border-radius: 10px; border-left: 3px solid var(--secondary-neon);">
-                    <p style="color: var(--secondary-neon); font-weight: 600;">� 🎯 ¡Aprovecha el 30% de descuento solo esta semana!</p>
+                    <p style="color: var(--secondary-neon); font-weight: 600;">🎯 ¡Aprovecha el 30% de descuento solo esta semana!</p>
                 </div>
             </div>
         </div>
-    </div>
     `;
 
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 
+    // Inicializar Hotmart después de abrir el popup
+    setTimeout(() => {
+        initHotmartInPopup();
+        const container = document.getElementById(`hotmartContainer-${bookId}`);
+        if (container) {
+            container.innerHTML = generarHotmartWidget(libro.hotmartId);
+        }
+    }, 100);
+
+    // Evento para cerrar
     const closeBtn = content.querySelector('.popup-close');
     closeBtn.addEventListener('click', closePopup);
 
