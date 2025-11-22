@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valyra Editorial - Libros que Transforman Vidas</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo" onclick="window.location.href='index.html'">VALYRA</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="catalogo.html">Catálogo</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-section">
+                            <h4>Salud y Bienestar</h4>
+                            <div class="submenu-books">
+                                <a href="producto-auto-desempeno.html">Auto Desempeño Masculino</a>
+                                <a href="producto-madres-activas.html">Madres Activas en Casa</a>
+                                <a href="producto-operacion-verano.html">Operación Verano 2026</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-section">
+                            <h4>DIY</h4>
+                            <div class="submenu-books">
+                                <a href="producto-14-proyectos-diy.html">14 Proyectos DIY</a>
+                                <a href="producto-diy-upcycling.html">DIY Upcycling</a>
+                                <a href="producto-velas-soja.html">Velas de Soja</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-section">
+                            <h4>Finanzas e IA</h4>
+                            <div class="submenu-books">
+                                <a href="producto-ia-para-todos.html">IA Para Todos</a>
+                                <a href="producto-estrategias-digitales.html">Estrategias Digitales PYMES</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="quien-somos.html">Quién Somos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-logo">VALYRA</h1>
+            <p class="hero-slogan">Libros que transforman vidas, un clic a la vez</p>
+        </div>
+        
+        <div class="hero-social">
+            <a href="https://www.instagram.com/valyra.edit" target="_blank" class="social-icon">📷</a>
+            <a href="https://www.facebook.com/share/1DhEVU9XZR" target="_blank" class="social-icon">📘</a>
+            <a href="https://www.tiktok.com/@valyra79" target="_blank" class="social-icon">🎵</a>
+        </div>
+        
+        <div class="news-ticker">
+            <div class="ticker-content">
+                <span class="ticker-item">🚀 30% DE DESCUENTO SOLO ESTA SEMANA - No dejes escapar esta oportunidad</span>
+                <span class="ticker-item">🚀 30% DE DESCUENTO SOLO ESTA SEMANA - No dejes escapar esta oportunidad</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EBOOKS SECTION -->
+    <section class="ebooks-section" id="ebooks">
+        <h2 class="section-title">Nuestras Colecciones</h2>
+        
+        <!-- DIY -->
+        <div class="category-section">
+            <div class="category-header">
+                <h3 class="category-title">DIY</h3>
+            </div>
+            <div class="carousel-container" id="diyCarousel">
+                <div class="carousel-track"></div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salud y Bienestar -->
+        <div class="category-section">
+            <div class="category-header">
+                <h3 class="category-title">Salud y Bienestar</h3>
+            </div>
+            <div class="carousel-container" id="saludCarousel">
+                <div class="carousel-track"></div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Finanzas e IA -->
+        <div class="category-section">
+            <div class="category-header">
+                <h3 class="category-title">Finanzas e IA</h3>
+            </div>
+            <div class="carousel-container" id="iaCarousel">
+                <div class="carousel-track"></div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; Valyra 2025 - Todos los derechos reservados</p>
+            <p>Contacto: <a href="mailto:valyra.edit@hotmail.com">valyra.edit@hotmail.com</a></p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/valyra.edit" target="_blank" class="social-icon">Instagram</a>
+                <a href="https://www.facebook.com/share/1DhEVU9XZR" target="_blank" class="social-icon">Facebook</a>
+                <a href="https://www.tiktok.com/@valyra79" target="_blank" class="social-icon">TikTok</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POPUP -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content" id="popupContent"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
