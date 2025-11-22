@@ -15,8 +15,8 @@ const libros = {
             <p>Ideal para personas que quieren darle un toque personal a su espacio sin invertir en reformas costosas. 
             Cada proyecto incluye instrucciones claras, tiempo estimado y presupuesto adecuado para cualquier bolsillo.</p>
         `,
-        precioOriginal: 29.99,
-        precioDescuento: 20.99,
+        precioOriginal: 12.99,
+        precioDescuento: 9.99,
         hotmartId: 'R102956683Y'
     },
     'auto-desempeno': {
@@ -39,8 +39,8 @@ const libros = {
                 <li>Construir relaciones más profundas y experiencias memorables</li>
             </ul>
         `,
-        precioOriginal: 39.99,
-        precioDescuento: 27.99,
+        precioOriginal: 12.99,
+        precioDescuento: 9.99,
         hotmartId: 'G102945033G'
     },
     'diy-upcycling': {
@@ -57,8 +57,8 @@ const libros = {
             <p>Ideal para creativas que buscan desconectar del estrés, familias que quieren compartir un proyecto juntas y cualquier persona que quiera un hogar único sin ir al Ikea.</p>
             <p><strong>+Bonus:</strong> trucos para fotografiar tus creaciones y lucirlas en redes sin filtros.</p>
         `,
-        precioOriginal: 24.99,
-        precioDescuento: 17.49,
+        precioOriginal: 12.99,
+        precioDescuento: 9.99,
         hotmartId: 'W102956911G'
     },
     'estrategias-digitales': {
@@ -72,8 +72,8 @@ const libros = {
             <p>Incluye calendario 2026, flujos WhatsApp/Instagram listos para copiar-pegar, y el paso a paso para lanzar tu primer embudo en 7 días sin ser "influencer" ni invertir un euro en ads.</p>
             <p>Perfecto para emprendedores que quieren automatizar su negocio y escalar sin complicaciones tecnológicas.</p>
         `,
-        precioOriginal: 49.99,
-        precioDescuento: 34.99,
+        precioOriginal: 19.99,
+        precioDescuento: 14.99,
         hotmartId: 'H102956822M'
     },
     'ia-para-todos': {
@@ -94,8 +94,8 @@ const libros = {
                 <li>Escalar hasta 1.000 €/mes siguiendo un plan claro de 90 días</li>
             </ul>
         `,
-        precioOriginal: 44.99,
-        precioDescuento: 31.49,
+        precioOriginal: 19.99,
+        precioDescuento: 14.99,
         hotmartId: 'J102944384P'
     },
     'madres-activas': {
@@ -109,8 +109,8 @@ const libros = {
             <p>Desde estiramientos de 7 minutos hasta mini rituales de gratitud que calman la mente y reconectan con tu cuerpo. <strong>Sin equipos, sin horarios imposibles, sin culpa.</strong></p>
             <p>Solo intención, amor propio y pasos pequeños que suman. Ideal para madres que buscan bienestar real, constancia amorosa y un rincón de calma dentro del caos diario.</p>
         `,
-        precioOriginal: 34.99,
-        precioDescuento: 24.49,
+        precioOriginal: 12.99,
+        precioDescuento: 9.99,
         hotmartId: 'S102968505K'
     },
     'operacion-verano': {
@@ -131,8 +131,8 @@ const libros = {
             </ul>
             <p>Ideal si quieres resultados visibles antes de tus vacaciones y mantenerlos después.</p>
         `,
-        precioOriginal: 54.99,
-        precioDescuento: 38.49,
+        precioOriginal: 12.99,
+        precioDescuento: 9.99,
         hotmartId: 'O102968513I'
     },
     'velas-soja': {
@@ -153,8 +153,8 @@ const libros = {
                 <li>Vender online: precios, empaques y textos que convierten</li>
             </ul>
         `,
-        precioOriginal: 19.99,
-        precioDescuento: 13.99,
+        precioOriginal: 12.99,
+        precioDescuento: 9.99,
         hotmartId: 'G102944748Y'
     }
 };
