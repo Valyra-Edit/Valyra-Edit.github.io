@@ -187,10 +187,8 @@ function generarHotmartWidget(hotmartId) {
 // HEADER Y MENÚ DESPLEGABLE
 // ===================================
 document.addEventListener('DOMContentLoaded', function() {
-    // Menú desplegable futurista
     const dropdown = document.querySelector('.dropdown');
     
-    // Solo activar en mobile si es necesario
     dropdown.addEventListener('click', function(e) {
         if (window.innerWidth <= 768) {
             e.stopPropagation();
@@ -198,27 +196,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Submenús interactivos
     const dropdownSections = document.querySelectorAll('.dropdown-section');
     
     dropdownSections.forEach(section => {
         section.addEventListener('click', function(e) {
             e.stopPropagation();
             
-            // Cerrar todos los otros submenús
             dropdownSections.forEach(otherSection => {
                 if (otherSection !== this) {
                     otherSection.querySelector('.submenu-books').classList.remove('active');
                 }
             });
             
-            // Toggle el submenú actual
             const submenu = this.querySelector('.submenu-books');
             submenu.classList.toggle('active');
         });
     });
 
-    // Cerrar menús al hacer clic fuera
     document.addEventListener('click', function() {
         dropdown.classList.remove('active');
         document.querySelectorAll('.submenu-books').forEach(submenu => {
@@ -268,7 +262,6 @@ class Carousel {
         this.nextBtn.addEventListener('click', () => this.next());
         this.prevBtn.addEventListener('click', () => this.prev());
         
-        // Touch events para móvil
         let startX = 0;
         let endX = 0;
         
@@ -346,16 +339,16 @@ function openPopup(bookId) {
                 <h3 style="color: var(--primary-neon); margin-bottom: 1rem; font-family: var(--font-primary);">Descripción</h3>
                 <div class="popup-description">${libro.descripcionLarga}</div>
                 <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(179,55,242,0.1); border-radius: 10px; border-left: 3px solid var(--secondary-neon);">
-                    <p style="color: var(--secondary-neon); font-weight: 600;">🎯 ¡Aprovecha el 30% de descuento solo esta semana!</p>
+                    <p style="color: var(--secondary-neon); font-weight: 600;">� 🎯 ¡Aprovecha el 30% de descuento solo esta semana!</p>
                 </div>
             </div>
         </div>
+    </div>
     `;
 
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 
-    // Evento para cerrar
     const closeBtn = content.querySelector('.popup-close');
     closeBtn.addEventListener('click', closePopup);
 
@@ -365,7 +358,6 @@ function openPopup(bookId) {
         }
     });
 
-    // Cerrar con ESC
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closePopup();
@@ -383,7 +375,6 @@ function closePopup() {
 // INICIALIZACIÓN
 // ===================================
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar carruseles solo en index.html
     if (document.getElementById('diyCarousel')) {
         const librosDIY = ['14-proyectos-diy', 'diy-upcycling', 'velas-soja'];
         const librosSalud = ['auto-desempeno', 'madres-activas', 'operacion-verano'];
@@ -394,7 +385,6 @@ document.addEventListener('DOMContentLoaded', function() {
         new Carousel('iaCarousel', librosIA);
     }
 
-    // Smooth scroll para enlaces internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -408,7 +398,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Animación al hacer scroll (parallax sutil)
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         const hero = document.querySelector('.hero');
@@ -432,7 +421,6 @@ function handleContactForm(e) {
         return;
     }
     
-    // Simular envío
     const submitBtn = e.target.querySelector('.submit-btn');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Enviando...';
