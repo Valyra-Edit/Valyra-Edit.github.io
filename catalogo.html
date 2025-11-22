@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Valyra Editorial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo" onclick="window.location.href='index.html'">VALYRA</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown active">
+                    <a href="catalogo.html">Catálogo</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-section">
+                            <h4>Salud y Bienestar</h4>
+                            <div class="submenu-books">
+                                <a href="producto-auto-desempeno.html">Auto Desempeño Masculino</a>
+                                <a href="producto-madres-activas.html">Madres Activas en Casa</a>
+                                <a href="producto-operacion-verano.html">Operación Verano 2026</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-section">
+                            <h4>DIY</h4>
+                            <div class="submenu-books">
+                                <a href="producto-14-proyectos-diy.html">14 Proyectos DIY</a>
+                                <a href="producto-diy-upcycling.html">DIY Upcycling</a>
+                                <a href="producto-velas-soja.html">Velas de Soja</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-section">
+                            <h4>Finanzas e IA</h4>
+                            <div class="submenu-books">
+                                <a href="producto-ia-para-todos.html">IA Para Todos</a>
+                                <a href="producto-estrategias-digitales.html">Estrategias Digitales PYMES</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="quien-somos.html">Quién Somos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="catalogo-section">
+        <h1 class="section-title">Catálogo Completo</h1>
+        
+        <div class="catalogo-grid">
+            <!-- DIY -->
+            <div class="catalogo-category">
+                <h3>DIY - Hazlo Tú Mismo</h3>
+                <div class="books-grid">
+                    <a href="producto-14-proyectos-diy.html">
+                        <img src="https://i.ibb.co/Lh69XSpt/14-proyectos-DIY-para-transformar-tu-hogar-en-un-fin-de-semana.jpg" alt="14 Proyectos DIY">
+                        <p>14 Proyectos DIY</p>
+                    </a>
+                    <a href="producto-diy-upcycling.html">
+                        <img src="https://i.ibb.co/Kp5GtRJz/DIY-Upcycling-5-proyectos-creativos-para-transformar-tu-hogar.jpg" alt="DIY Upcycling">
+                        <p>DIY Upcycling</p>
+                    </a>
+                    <a href="producto-velas-soja.html">
+                        <img src="https://i.ibb.co/MDvYmwgK/Velas-de-Soja-desde-cero.jpg" alt="Velas de Soja">
+                        <p>Velas de Soja</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Salud y Bienestar -->
+            <div class="catalogo-category">
+                <h3>Salud y Bienestar</h3>
+                <div class="books-grid">
+                    <a href="producto-auto-desempeno.html">
+                        <img src="https://i.ibb.co/nsGjx7Ss/Auto-Desempe-o-Masculino.jpg" alt="Auto Desempeño">
+                        <p>Auto Desempeño</p>
+                    </a>
+                    <a href="producto-madres-activas.html">
+                        <img src="https://i.ibb.co/KcVNTFn7/Madres-Activas-en-Casa.jpg" alt="Madres Activas">
+                        <p>Madres Activas</p>
+                    </a>
+                    <a href="producto-operacion-verano.html">
+                        <img src="https://i.ibb.co/d0YRz67G/Gu-a-Completa-2026.jpg" alt="Operación Verano">
+                        <p>Operación Verano</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Finanzas e IA -->
+            <div class="catalogo-category">
+                <h3>Finanzas e IA</h3>
+                <div class="books-grid">
+                    <a href="producto-ia-para-todos.html">
+                        <img src="https://i.ibb.co/XZjfgM3n/IA-Para-Todos.jpg" alt="IA Para Todos">
+                        <p>IA Para Todos</p>
+                    </a>
+                    <a href="producto-estrategias-digitales.html">
+                        <img src="https://i.ibb.co/DPZQvtKX/Estrategias-Digitales-para-PYMES-en-2026.jpg" alt="Estrategias Digitales">
+                        <p>Estrategias Digitales</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; Valyra 2025 - Todos los derechos reservados</p>
+            <p>Contacto: <a href="mailto:valyra.edit@hotmail.com">valyra.edit@hotmail.com</a></p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/valyra.edit" target="_blank" class="social-icon">Instagram</a>
+                <a href="https://www.facebook.com/share/1DhEVU9XZR" target="_blank" class="social-icon">Facebook</a>
+                <a href="https://www.tiktok.com/@valyra79" target="_blank" class="social-icon">TikTok</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
