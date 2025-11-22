@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Valyra Editorial</title>
+    <title>Catálogo - Valyra Editorial</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo" onclick="window.location.href='index.html'">VALYRA</div>
+        <img src="https://i.ibb.co/8DZpJ8MC/Valyra-header.png" alt="Valyra Logo" class="logo" onclick="window.location.href='index.html'">
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-                <li class="dropdown">
+                <li class="dropdown active">
                     <a href="catalogo.html">Catálogo</a>
                     <div class="dropdown-content">
                         <div class="dropdown-section">
@@ -42,36 +43,63 @@
                     </div>
                 </li>
                 <li><a href="quien-somos.html">Quién Somos</a></li>
-                <li><a href="contacto.html" class="active">Contacto</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="contacto-section">
-        <div class="contacto-container">
-            <div class="contacto-header">
-                <h2>¿Tienes dudas? 💬</h2>
-                <p>Estamos aquí para ayudarte. Cuéntanos qué necesitas y te responderemos en menos de 24 horas.</p>
-                <p style="color: var(--primary-neon); margin-top: 1rem; font-weight: 600;">Tu opinión nos hace mejores.</p>
+    <section class="catalogo-section">
+        <h1 class="section-title">Catálogo Completo</h1>
+        
+        <div class="catalogo-grid">
+            <div class="catalogo-category">
+                <h3>DIY - Hazlo Tú Mismo</h3>
+                <div class="books-grid">
+                    <a href="producto-14-proyectos-diy.html">
+                        <img src="https://i.ibb.co/Lh69XSpt/14-proyectos-DIY-para-transformar-tu-hogar-en-un-fin-de-semana.jpg" alt="14 Proyectos DIY">
+                        <p>14 Proyectos DIY</p>
+                    </a>
+                    <a href="producto-diy-upcycling.html">
+                        <img src="https://i.ibb.co/Kp5GtRJz/DIY-Upcycling-5-proyectos-creativos-para-transformar-tu-hogar.jpg" alt="DIY Upcycling">
+                        <p>DIY Upcycling</p>
+                    </a>
+                    <a href="producto-velas-soja.html">
+                        <img src="https://i.ibb.co/MDvYmwgK/Velas-de-Soja-desde-cero.jpg" alt="Velas de Soja">
+                        <p>Velas de Soja</p>
+                    </a>
+                </div>
             </div>
-            
-            <form class="contacto-form" onsubmit="handleContactForm(event)">
-                <div class="form-group">
-                    <input type="email" id="email" required placeholder=" ">
-                    <label for="email">Tu email</label>
+
+            <div class="catalogo-category">
+                <h3>Salud y Bienestar</h3>
+                <div class="books-grid">
+                    <a href="producto-auto-desempeno.html">
+                        <img src="https://i.ibb.co/nsGjx7Ss/Auto-Desempe-o-Masculino.jpg" alt="Auto Desempeño">
+                        <p>Auto Desempeño</p>
+                    </a>
+                    <a href="producto-madres-activas.html">
+                        <img src="https://i.ibb.co/KcVNTFn7/Madres-Activas-en-Casa.jpg" alt="Madres Activas">
+                        <p>Madres Activas</p>
+                    </a>
+                    <a href="producto-operacion-verano.html">
+                        <img src="https://i.ibb.co/d0YRz67G/Gu-a-Completa-2026.jpg" alt="Operación Verano">
+                        <p>Operación Verano</p>
+                    </a>
                 </div>
-                
-                <div class="form-group">
-                    <textarea id="mensaje" rows="6" required placeholder=" "></textarea>
-                    <label for="mensaje">Cuéntanos qué necesitas</label>
+            </div>
+
+            <div class="catalogo-category">
+                <h3>Finanzas e IA</h3>
+                <div class="books-grid">
+                    <a href="producto-ia-para-todos.html">
+                        <img src="https://i.ibb.co/XZjfgM3n/IA-Para-Todos.jpg" alt="IA Para Todos">
+                        <p>IA Para Todos</p>
+                    </a>
+                    <a href="producto-estrategias-digitales.html">
+                        <img src="https://i.ibb.co/DPZQvtKX/Estrategias-Digitales-para-PYMES-en-2026.jpg" alt="Estrategias Digitales">
+                        <p>Estrategias Digitales</p>
+                    </a>
                 </div>
-                
-                <button type="submit" class="submit-btn">Enviar Mensaje</button>
-            </form>
-            
-            <div style="margin-top: 2rem; text-align: center; padding: 1rem; background: rgba(0,243,255,0.1); border-radius: 10px;">
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">También puedes escribirnos directamente a:</p>
-                <a href="mailto:valyra.edit@hotmail.com" style="color: var(--primary-neon); font-weight: 600;">valyra.edit@hotmail.com</a>
             </div>
         </div>
     </section>
@@ -81,9 +109,15 @@
             <p>&copy; Valyra 2025 - Todos los derechos reservados</p>
             <p>Contacto: <a href="mailto:valyra.edit@hotmail.com">valyra.edit@hotmail.com</a></p>
             <div class="social-icons">
-                <a href="https://www.instagram.com/valyra.edit" target="_blank" class="social-icon">Instagram</a>
-                <a href="https://www.facebook.com/share/1DhEVU9XZR" target="_blank" class="social-icon">Facebook</a>
-                <a href="https://www.tiktok.com/@valyra79" target="_blank" class="social-icon">TikTok</a>
+                <a href="https://www.instagram.com/valyra.edit" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/share/1DhEVU9XZR" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.tiktok.com/@valyra79" target="_blank" class="social-icon">
+                    <i class="fab fa-tiktok"></i>
+                </a>
             </div>
         </div>
     </footer>
