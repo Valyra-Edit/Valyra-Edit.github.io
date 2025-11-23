@@ -1092,3 +1092,29 @@ footer {
         padding: 2rem;
     }
 }
+/* ===================================
+   FIX: COMPENSAR HEADER FIJO
+   =================================== */
+
+/* Empuja todo el contenido hacia abajo */
+body {
+    padding-top: 140px; /* Altura aproximada del header */
+}
+
+/* Ajusta el hero para que siga ocupando toda la pantalla */
+.hero {
+    margin-top: -140px;
+    height: calc(100vh + 140px);
+}
+
+/* En móvil el header es más pequeño */
+@media (max-width: 768px) {
+    body {
+        padding-top: 180px; /* Header en columna necesita más espacio */
+    }
+    
+    .hero {
+        margin-top: -180px;
+        height: calc(100vh + 180px);
+    }
+}
