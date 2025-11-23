@@ -68,18 +68,16 @@ header {
     padding: 0.5rem 1rem;
 }
 
-.logo:hover {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: var(--border-glow);
-    transform: scale(1.05);
+.logo {
+    height: 45px; /* Tamaño similar al texto (2.8rem ≈ 45px) */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(100, 181, 246, 0.5)); /* Efecto neon suave */
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
+.logo:hover {
+    filter: drop-shadow(0 0 20px rgba(100, 181, 246, 0.8)); /* Glow más intenso al pasar el ratón */
+    transform: scale(1.05);
 }
 
 nav a {
