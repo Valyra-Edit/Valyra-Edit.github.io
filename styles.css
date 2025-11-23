@@ -59,7 +59,7 @@ header {
 
 /* LOGO - IMAGEN */
 .logo {
-    height: 45px; /* Tamaño exacto para tu imagen */
+    height: 85px; /* Tamaño exacto para tu imagen */
     width: auto;
     cursor: pointer;
     transition: all 0.3s ease;
