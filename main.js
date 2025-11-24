@@ -36,7 +36,7 @@ async function detectCountry() {
     try {
         const response = await fetch('https://ipapi.co/json/');
         const data = await response.json();
-        return data.country_code; // Ej: "US", "GB", "ES"
+        return data.country_code;
     } catch (error) {
         console.warn('No se pudo detectar el país:', error);
         return null;
@@ -46,7 +46,6 @@ async function detectCountry() {
 // Obtiene tasas de cambio (gratis, 1500 req/mes)
 async function getExchangeRates(targetCurrency = 'EUR') {
     try {
-        // Si es EUR, no necesitamos conversión
         if (targetCurrency === 'EUR') return null;
         
         const response = await fetch(`https://api.exchangerate-api.com/v4/latest/EUR`);
@@ -76,7 +75,6 @@ function convertPrice(eurPrice, rate, currency) {
 
 // Actualiza todos los precios en la página
 function updateAllPrices(currency, rate) {
-    // 1. Precios en popup
     document.querySelectorAll('.popup-price-original').forEach(el => {
         const originalText = el.textContent;
         const eurAmount = parseFloat(originalText.replace(/[^\d.]/g, ''));
@@ -95,7 +93,6 @@ function updateAllPrices(currency, rate) {
         }
     });
 
-    // 2. Mostrar indicador de moneda
     const indicator = document.getElementById('currency-indicator');
     if (indicator) {
         indicator.textContent = `Moneda: ${currencyConfig.name[currency] || 'EUR'}`;
@@ -105,41 +102,23 @@ function updateAllPrices(currency, rate) {
 
 // Inicializa el conversor al cargar la página
 async function initCurrencyConverter() {
-    // Detectar país
     const countryCode = await detectCountry();
     
-    // Mapear país a moneda
     const countryToCurrency = {
-        'US': 'USD',
-        'GB': 'GBP',
-        'JP': 'JPY',
-        'CA': 'CAD',
-        'AU': 'AUD',
-        'MX': 'MXN',
-        'BR': 'BRL',
-        'CO': 'COP',
-        'CL': 'CLP',
-        'AR': 'ARS',
-        'ES': 'EUR',
-        'FR': 'EUR',
-        'DE': 'EUR',
-        'IT': 'EUR',
-        'PT': 'EUR',
-        'NL': 'EUR'
+        'US': 'USD', 'GB': 'GBP', 'JP': 'JPY', 'CA': 'CAD', 'AU': 'AUD',
+        'MX': 'MXN', 'BR': 'BRL', 'CO': 'COP', 'CL': 'CLP', 'AR': 'ARS',
+        'ES': 'EUR', 'FR': 'EUR', 'DE': 'EUR', 'IT': 'EUR', 'PT': 'EUR', 'NL': 'EUR'
     };
 
     const targetCurrency = countryCode ? countryToCurrency[countryCode] : 'EUR';
     
-    // Si es EUR, no hacemos nada
     if (targetCurrency === 'EUR') {
         console.log('Moneda base EUR, no se requiere conversión');
         return;
     }
 
-    // Obtener tasa de cambio
     const rate = await getExchangeRates(targetCurrency);
     
-    // Si conseguimos la tasa, actualizamos precios
     if (rate) {
         updateAllPrices(targetCurrency, rate);
         console.log(`Precios convertidos a ${targetCurrency} (tasa: ${rate})`);
@@ -333,9 +312,8 @@ function generarHotmartWidget(hotmartId) {
     `;
 }
 
-// Función para inicializar Hotmart después de abrir popup
 function initHotmartInPopup() {
-    if (window.Hotmart) return; // Ya inicializado
+    if (window.Hotmart) return;
     
     const script = document.createElement('script');
     script.src = 'https://static.hotmart.com/checkout/widget.min.js';
@@ -475,7 +453,7 @@ class Carousel {
 }
 
 // ===================================
-// POPUP CON HOTMART FUNCIONAL
+// POPUP CON HOTMART
 // ===================================
 function openPopup(bookId) {
     const libro = libros[bookId];
@@ -511,7 +489,6 @@ function openPopup(bookId) {
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 
-    // Inicializar Hotmart después de abrir el popup
     setTimeout(() => {
         initHotmartInPopup();
         const container = document.getElementById(`hotmartContainer-${bookId}`);
@@ -520,7 +497,6 @@ function openPopup(bookId) {
         }
     }, 100);
 
-    // Evento para cerrar
     const closeBtn = content.querySelector('.popup-close');
     closeBtn.addEventListener('click', closePopup);
 
@@ -544,13 +520,13 @@ function closePopup() {
 }
 
 // ===================================
-// INICIALIZACIÓN
+// INICIALIZACIÓN GENERAL
 // ===================================
 document.addEventListener('DOMContentLoaded', function() {
     // Iniciar conversor de moneda
     initCurrencyConverter();
     
-    // Tu código existente...
+    // Inicializar carruseles si existen
     if (document.getElementById('diyCarousel')) {
         const librosDIY = ['14-proyectos-diy', 'diy-upcycling', 'velas-soja'];
         const librosSalud = ['auto-desempeno', 'madres-activas', 'operacion-verano'];
@@ -561,6 +537,7 @@ document.addEventListener('DOMContentLoaded', function() {
         new Carousel('iaCarousel', librosIA);
     }
 
+    // Smooth scroll para enlaces internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -574,9 +551,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-     // EFECTO PARALLAX SOLO PARA DESKTOP (evita temblor en móviles)
+    // EFECTO PARALLAX SOLO PARA DESKTOP (evita temblor en móviles)
     window.addEventListener('scroll', function() {
-        // Solo aplicar en pantallas mayores a 768px
         if (window.innerWidth > 768) {
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
@@ -584,6 +560,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 hero.style.transform = `translateY(${scrolled * 0.5}px)`;
             }
         }
+    });
 });
 
 // ===================================
