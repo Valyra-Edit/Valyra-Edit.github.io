@@ -1148,7 +1148,7 @@ body {
 /* Espaciador invisible solo para desktop */
 @media (min-width: 769px) {
     .parallax-spacer {
-        height: 250px; /* Ajusta este valor si necesitas más/menos espacio */
+        height: 400px; /* Ajusta este valor si necesitas más/menos espacio */
         display: block;
         width: 100%;
     }
