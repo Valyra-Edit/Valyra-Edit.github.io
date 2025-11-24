@@ -574,13 +574,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+     // EFECTO PARALLAX SOLO PARA DESKTOP (evita temblor en móviles)
     window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        // Solo aplicar en pantallas mayores a 768px
+        if (window.innerWidth > 768) {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
         }
-    });
 });
 
 // ===================================
