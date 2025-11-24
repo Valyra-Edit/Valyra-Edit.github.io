@@ -1134,9 +1134,18 @@ body {
 
 /* Ajusta el hero para que siga ocupando toda la pantalla */
 .hero {
-    margin-top: -140px;
-    height: calc(100vh + 140px);
+    height: 100vh; /* ← DEJA SOLO ESTO */
+    background-image: url('https://i.ibb.co/gNRgCN6/portada-web.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
+
 
 /* En móvil el header es más pequeño */
 @media (max-width: 768px) {
@@ -1145,7 +1154,6 @@ body {
     }
     
     .hero {
-        margin-top: -180px;
-        height: calc(100vh + 180px);
+        height: 100vh; /* ← DEJA SOLO ESTO */
     }
 }
