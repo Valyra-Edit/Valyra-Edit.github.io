@@ -1142,11 +1142,21 @@ body {
     }
 }
 /* ===================================
-   FIX: ESPACIO EXTRA EN ESCRITORIO PARA PARALLAX
+   FIX: ESPACIADOR PARA PARALLAX EN ESCRITORIO
    =================================== */
+
+/* Espaciador invisible solo para desktop */
 @media (min-width: 769px) {
-    /* Añade espacio extra entre el hero y las colecciones en desktop */
-    .ebooks-section {
-        padding-top: 12rem; /* Original 4rem + 4rem extra */
+    .parallax-spacer {
+        height: 150px; /* Ajusta este valor si necesitas más/menos espacio */
+        display: block;
+        width: 100%;
+    }
+}
+
+/* En móvil no necesitamos espaciador */
+@media (max-width: 768px) {
+    .parallax-spacer {
+        display: none;
     }
 }
