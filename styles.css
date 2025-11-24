@@ -1147,6 +1147,6 @@ body {
 @media (min-width: 769px) {
     /* Añade espacio extra entre el hero y las colecciones en desktop */
     .ebooks-section {
-        padding-top: 8rem; /* Original 4rem + 4rem extra */
+        padding-top: 12rem; /* Original 4rem + 4rem extra */
     }
 }
