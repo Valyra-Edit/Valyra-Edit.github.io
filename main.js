@@ -293,21 +293,10 @@ const libros = {
 // ===================================
 function generarHotmartWidget(hotmartId) {
     return `
-        <script type="text/javascript">
-            function importHotmart() { 
-                var imported = document.createElement('script'); 
-                imported.src = 'https://static.hotmart.com/checkout/widget.min.js'; 
-                document.head.appendChild(imported); 
-                var link = document.createElement('link'); 
-                link.rel = 'stylesheet'; 
-                link.type = 'text/css'; 
-                link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css'; 
-                document.head.appendChild(link);
-            } 
-            importHotmart(); 
-        <\/script>
-        <a onclick="return false;" href="https://pay.hotmart.com/${hotmartId}?checkoutMode=2" class="hotmart-fb hotmart__button-checkout">
-            <img src="https://static.hotmart.com/img/btn-buy-green.png" alt="Comprar ahora">
+        <a onclick="return false;" 
+           href="https://pay.hotmart.com/${hotmartId}?checkoutMode=2" 
+           class="hotmart-fb hotmart__button-checkout custom-buy-btn">
+            Comprar Ahora
         </a>
     `;
 }
@@ -479,7 +468,7 @@ function openPopup(bookId) {
             <div>
                 <h3 style="color: var(--primary-neon); margin-bottom: 1rem; font-family: var(--font-primary);">Descripción</h3>
                 <div class="popup-description">${libro.descripcionLarga}</div>
-                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(187,134,252,0.1); border-radius: 10px; border-left: 3px solid var(--secondary-neon);">
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(187,134,252,0.1); border-radius: 10px;">
                     <p style="color: var(--secondary-neon); font-weight: 600;">🎯 ¡Aprovecha el 30% de descuento solo esta semana!</p>
                 </div>
             </div>
